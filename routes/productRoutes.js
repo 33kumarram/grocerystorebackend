@@ -5,7 +5,7 @@ const {fetchProducts, AddProduct} = require("../controllers/productController")
 const router = express.Router()
 
 router.route('/products').get(fetchProducts) 
-router.route('/addproduct').put(AddProduct)
+router.route('/addproduct').post(AddProduct)
 
 module.exports= router
 

@@ -5,6 +5,7 @@ const cors = require("cors");
 const ConnectDB = require("./config/db");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 const productRoutes = require("./routes/productRoutes")
+const fileRoutes = require("./routes/fileRoutes")
 
 
 var corsOptions = {
@@ -31,6 +32,7 @@ app.use(morgan("dev")); // to display hit url in terminal
 app.use(cors(corsOptions)); // to accept request from origin specified in cor options
 
 app.use("/products", productRoutes)
+app.use("/files", fileRoutes);
 app.get("/", (req, res) => {
     res.send("welcome !!!");
   });
