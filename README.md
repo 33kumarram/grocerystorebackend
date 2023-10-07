@@ -82,7 +82,7 @@ GroceryStoreBackEnd is built with the following tools and libraries: <ul><li>Nod
 1. Add product detail: 
 
 
-   End point = <ServerUrl>/store/addproduct
+   End point = < ServerUrl >/store/addproduct
 
    Request Type = POST
 
@@ -104,13 +104,13 @@ GroceryStoreBackEnd is built with the following tools and libraries: <ul><li>Nod
 
 2. Get Products List:
 
-   End point = <ServerUrl>/store/products
+   End point = < ServerUrl >/store/products
 
    Request Type = GET
 
 3. Upload Image:
 
-   End point = <ServerUrl>/files/uploadimage
+   End point = < ServerUrl >/files/uploadimage
 
    Request Type = POST
 
