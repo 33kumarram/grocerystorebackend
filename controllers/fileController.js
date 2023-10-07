@@ -1,7 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const gridFs = require("gridfs-stream");
 const mongoose = require("mongoose");
-const appUrl = process.env.APP_URL;
 
 const conn = mongoose.connection;
 
@@ -19,6 +18,7 @@ const imageUpload = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("File not found");
   }
+  const appUrl = process.env.APP_URL
   const imageUrl = `${appUrl}/files/${req.file.filename}`;
   res.status(201).json({
     imageUrl: imageUrl,

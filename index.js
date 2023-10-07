@@ -4,8 +4,6 @@ const morgan = require("morgan");
 const cors = require("cors");
 const ConnectDB = require("./config/db");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
-const productRoutes = require("./routes/productRoutes")
-const fileRoutes = require("./routes/fileRoutes")
 
 
 var corsOptions = {
@@ -18,6 +16,8 @@ var corsOptions = {
   };
 
 dotenv.config();
+const productRoutes = require("./routes/productRoutes")
+const fileRoutes = require("./routes/fileRoutes")
 const app = express();
 
 const PORT = process.env.PORT || 8000;
@@ -31,7 +31,7 @@ app.use(express.json()); // to accept json data
 app.use(morgan("dev")); // to display hit url in terminal
 app.use(cors(corsOptions)); // to accept request from origin specified in cor options
 
-app.use("/products", productRoutes)
+app.use("/store", productRoutes)
 app.use("/files", fileRoutes);
 app.get("/", (req, res) => {
     res.send("welcome !!!");
